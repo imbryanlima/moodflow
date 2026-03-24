@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+
+    // FastAPI
+    "42crunch.vscode-openapi",
+
+    // React / Frontend
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // Banco de dados
+    "cweijan.vscode-postgresql-client2",
+
+    // Git
+    "eamodio.gitlens",
+
+    // Geral
+    "editorconfig.editorconfig",
+    "christian-kohler.path-intellisense"
+  ]
+}
