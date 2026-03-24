@@ -16,6 +16,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - moodflow-net
 
   backend:
     build:
@@ -35,6 +37,8 @@ services:
       db:
         condition: service_healthy
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - moodflow-net
 
   frontend:
     build:
@@ -54,6 +58,26 @@ services:
     depends_on:
       - backend
     command: npm run dev -- --host 0.0.0.0 --port 3000
+    networks:
+      - moodflow-net
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: moodflow_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - moodflow-net
+
+networks:
+  moodflow-net:
+    driver: bridge
 
 volumes:
   postgres_data:
