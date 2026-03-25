@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from jamendo import buscar_musicas, buscar_musicas_populares
 
 app = FastAPI(title="Moodflow API")
 
@@ -12,5 +13,15 @@ app.add_middleware(
 )
 
 @app.get("/")
-def health_check():
+async def health_check():
     return {"status": "ok", "message": "Moodflow API funcionando!"}
+
+@app.get("/musicas/populares")
+async def musicas_populares():
+    musicas = await buscar_musicas_populares()
+    return {"musicas": musicas}
+
+@app.get("/musicas/buscar")
+async def buscar(q: str):
+    musicas = await buscar_musicas(q)
+    return {"musicas": musicas}
