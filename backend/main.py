@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from jamendo import buscar_musicas, buscar_musicas_populares
+from usuarios import router as usuarios_router
 
 app = FastAPI(title="Moodflow API")
 
@@ -11,6 +12,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(usuarios_router)
 
 @app.get("/")
 async def health_check():
