@@ -1,0 +1,186 @@
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  animation: fadeUp 0.3s ease both;
+}
+
+.mine {
+  justify-content: flex-end;
+}
+
+.theirs {
+  justify-content: flex-start;
+}
+
+.miniAvatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.bubble {
+  max-width: 62%;
+}
+
+.text {
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.textMine {
+  border-radius: 16px 16px 4px 16px;
+  background: var(--accent);
+}
+
+.textTheirs {
+  border-radius: 16px 16px 16px 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--border);
+}
+
+.time {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+  padding-left: 4px;
+  font-family: var(--font-mono);
+}
+
+.timeRight {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+.trackBubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 16px 16px 16px 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+}
+
+.trackBubbleMine {
+  border-radius: 16px 16px 4px 16px;
+  background: rgba(251, 146, 60, 0.1);
+  border-color: rgba(251, 146, 60, 0.25);
+}
+
+.trackThumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.trackLabel {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  margin-bottom: 2px;
+}
+
+.trackName {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.trackArtist {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.inputBar {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.shareBtn {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.shareBtn:hover {
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.inputWrap {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 11px 16px;
+}
+
+.input {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 14px;
+  width: 100%;
+}
+
+.sendBtn {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.sendBtn:hover {
+  background: #f97316;
+}

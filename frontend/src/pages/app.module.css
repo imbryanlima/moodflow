@@ -1,0 +1,255 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  z-index: 1;
+}
+
+.mainWithPlayer {
+  padding-bottom: 68px;
+}
+
+.header {
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 8, 14, 0.6);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.friendAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.friendName {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.friendSub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.dot { color: var(--muted); }
+
+.grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.friendsGrid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  align-content: start;
+}
+
+.friendCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  transition: border-color 0.2s;
+}
+
+.friendCard:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.friendCardTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.bigAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.statusDot {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+}
+
+.friendCardName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.friendCardHandle {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.chatBtn {
+  margin-left: auto;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.chatBtn:hover { opacity: 0.75; }
+
+.nowPlaying {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid;
+}
+
+.nowCover {
+  width: 38px;
+  height: 38px;
+  border-radius: 7px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.nowInfo {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nowLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-family: var(--font-mono);
+  margin-bottom: 2px;
+}
+
+.nowArtist {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.nothingPlaying {
+  color: var(--muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+  .grid {
+    padding: 12px 16px;
+  }
+
+  .friendsGrid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .header {
+    padding: 12px 16px;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .main {
+    padding-bottom: 60px;
+  }
+
+  .mainWithPlayer {
+    padding-bottom: 128px;
+  }
+
+  .header {
+    padding: 10px 14px;
+  }
+
+  .friendName {
+    font-size: 14px;
+  }
+
+  .grid {
+    padding: 10px 12px;
+    gap: 3px;
+  }
+
+  .friendsGrid {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .friendCard {
+    padding: 14px;
+    border-radius: 12px;
+  }
+}
